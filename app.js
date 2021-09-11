@@ -12,15 +12,15 @@ nextPart.style.display = "none";
 
 nextButton.addEventListener("click", function showNextPart() {
   if (billAmount.value) {
-    nextPart.style.display = "block";   
-    nextButton.style.display = "none"; 
+    nextPart.style.display = "block";
+    nextButton.style.display = "none";
   }
 });
 
 checkButton.addEventListener("click", function validateBillAndCashAmount() {
   hideMessage();
   if (billAmount.value > 0) {
-    if (cashGiven.value >= billAmount.value) {
+    if (Number(cashGiven.value) >= Number(billAmount.value)) {
       const amountToBeReturned = cashGiven.value - billAmount.value;
       calculateChange(amountToBeReturned);
     } else {
